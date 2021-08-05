@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'css/mesh.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet"/>
+
+    <title>This is Our Blog</title>
+   
+</head>
+<body>
+
+    <header>
+        <nav class="main-nav">
+          <a class="brand" href="/">
+            <h1>BestFriends Forever</h1>
+          </a>
+          <div class="sidenav">
+            <span class="open-slide">
+                <a href="#" onclick="openSlideMenu()">
+                    <svg width="30" height="30">
+                        <path d="M0, 5 30,5" stroke="#fff"
+                        stroke-width="5"/> 
+                        <path d="M0, 14 30,14" stroke="#fff"
+                        stroke-width="5"/> 
+                        <path d="M0, 23 30,23" stroke="#fff"
+                        stroke-width="5"/> 
+
+                    </svg>
+                </a>
+            </span>
+            <div id="side-menu" class="side-navv">
+              <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+              <a class="nav-btn1" href="/">Home</a>
+              <a class="nav-btn2" href="aboutus/">About us</a>
+              <a class="nav-btn3" href="contact/">Contact us</a>
+              <a class="nav-btn4" href="other/">Other</a>
+              
+          </div>
+      </div>
+
+
+          <div class="desktop-menu">
+            <ul>
+              <li><a href="" class="phone-nav-link">Home</a></li>
+              <li><a href="{% url 'aboutus' %}" class="phone-nav-link">About us</a></li>
+              <li>
+                <a href="{% url 'contact' %}" class="phone-nav-link">Contact Us</a>
+              </li>
+              <li><a href="{% url 'other' %}" class="phone-nav-link">Other</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <script>
+        function openSlideMenu(){
+            document.getElementById('side-menu').style.width
+            ='250px';
+            document.getElementById('main').style.marginLeft
+            ='250px';
+        }
+
+        function closeSlideMenu(){
+            document.getElementById('side-menu').style.width
+            ='0';
+            document.getElementById('main').style.marginLeft
+            ='0';
+        }
+    </script>
+    
+      <script src="{% static 'js/mesh.js' %}"></script>
+      <script src="{% static 'js/script.js' %}"></script>
+  
+</body>
+</html>
